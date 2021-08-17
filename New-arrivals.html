@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <script src="https://kit.fontawesome.com/6cf0bf4ded.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<link href="./proj.css" rel="stylesheet">
+<script src="./Proj.js"></script>
+
+</head>
+
+<body>
+    <!--Menu-->
+    <div class="bar-top">
+
+        <div class="logo">
+            <a href="./iisstart.html">
+                <img src="./UranEar.png" alt="">
+            </a>
+            <a href="./iisstart.html">
+                <h2>UranEar Book</h2>
+            </a>
+        </div>
+        <div class="option">
+            <select>
+                <option value="key-word ">Key Word</option>
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+            </select>
+            <div class="search">
+                <img src="./Search.png">
+                <input type="text" placeholder="Search for anything " name="search">
+
+            </div>
+        </div>
+        <div class="cart-btn">
+            <div class="cart">
+
+                <img src="./Cart.png">
+                <h3 id="cart-disp">0</h3>
+            </div>
+            <a href="./Login.html"><button class="login">Log In</button></a>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <hr class="dropdown-divider">
+                    <li class="nav-item active">
+                        <a class="nav-link active" aria-current="page" href="./iisstart.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="./Used-books.html"></a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle active" href="#browse" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Browse
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./New-arrivals.html">New Arrivals</a></li>
+                            <li><a class="dropdown-item" href="#">Best Seller</a></li>
+
+                            <li><a class="dropdown-item" href="#">
+                                    <A:tel>Award Winners</A:tel>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./Gift Cards.html" tabindex="-1" aria-disabled="false">Gift
+                            Cards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./about-us.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./about-us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./about-us.html">Book Love</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./about-us.html">Blog</a>
+                    </li>
+                    <hr class="dropdown-divider">
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    </div>
+    <div class="New-Arrivals">
+
+
+        <table class="New-Arrivals-tab">
+
+            <tr>
+                <h1>New Arrivals</h1>
+
+            </tr>
+            <hr>
+
+
+
+        </table>
+
+        <!--<div class="dropdown">
+        <table>
+            <td>
+               <p> Sort by</p>
+            </td>
+            <td>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Relevance
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Recently Arrived</a></li>
+              <li><a href="#">Title A-Z</a></li>
+              <li><a href="#">Title Z-A</a></li>
+            </ul>
+           </td>
+          </table>  
+          </div>-->
+
+        <div class="dropdown">
+            <table>
+                <td>
+                    <b> Sort by</b>
+                </td>
+                <td>
+                    <button class="btn btn-outline-success dropdown-toggle active" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Relevance
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#" onclick="sortRelevance()">Recently Arrived</a></li>
+                        <li><a class="dropdown-item" id="title-AZ" onclick="SortA_Z.getA_Z()" href="#">Title A-Z </a></li>
+                        <li><a class="dropdown-item" id="title-ZA" onclick="SortA_Z.getZ_A()" href="#">Title Z-A</a></li>
+                    </ul>
+                </td>
+            </table>
+        </div>
+
+        <table class="books-tab">
+            <tr>
+                <td id="rc11">
+                    <img  src="./Picture/bookH.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc12">
+                    <img src="./Picture/bookE.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc13">
+                    <img src="./Picture/bookJ.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc14">
+                    <img src="./Picture/bookI.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc15">
+                    <img src="./Picture/bookD.png" class="book-img" width="170" height="170">
+                </td>
+            </tr>
+
+            <tr>
+                <td id="rc21">
+                    <h6>Take a Hint,Dani Brown by Talia Hibbert</h6>
+
+                </td>
+                <td id="rc22">
+                    <h6>Daring and the Duke by Sara Maclean</h6>
+
+                </td>
+                <td id="rc23">
+                    <h6>You Had me at Hola by Alexis Daria</h6>
+
+                </td>
+                <td id="rc24">
+                    <h6>Ties that Tether by Jane Igahro</h6>
+
+                </td>
+                <td id="rc25">
+                    <h6>Boyfriend Material by Alexis Hall</h6>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td id="rc31">
+                    <button class="cart-bt" onclick="click_Cart()">Add to Cart</button>
+                </td>
+                <td id="rc32">
+                    <button class="cart-bt" onclick="click_Cart()">Add to Cart</button>
+                </td>
+                <td id="rc33">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc34">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc35">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td id="rc41">
+                    <img  src="./Picture/bookC.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc42">
+                    <img src="./Picture/bookG.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc43">
+                    <img src="./Picture/bookF.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc44">
+                    <img src="./Picture/bookB.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc45">
+                    <img src="./Picture/bookA.png" class="book-img" width="170" height="170">
+                </td>
+            </tr>
+            <tr>
+
+                <td id="rc51">
+                    <h6>A prince Among Frogs by E D Baker
+                        Used Trade Paperback</h6>
+
+                </td>
+                <td id="rc52">
+                    <h6>Mentats of Dune by Brian Herbert, Kevin J Anderson
+                        Used Hardcover</h6>
+
+                </td>
+                <td id="rc53">
+                    <h6>Ender's Game by Orson Scott Card
+                        Used Trade Paperback</h6>
+
+                </td>
+                <td id="rc54">
+                    <h6>#Girlboss
+                        by Sophia Amoruso
+                        Used Hardcover</h6>
+
+                </td>
+                <td id="rc55">
+                    <h6>& After the Fire
+                        by Lauren Belfer
+                        Used Trade Paperback</h6>
+
+                </td>
+            </tr>
+            <tr>
+                <td id="rc61">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc62">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc63">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc64">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc65">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+            </tr>
+            </tr>
+            <tr>
+                <td id="rc71">
+                    <img  src="./Picture/bookC.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc72">
+                    <img src="./Picture/bookG.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc73">
+                    <img src="./Picture/bookF.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc74">
+                    <img src="./Picture/bookB.png" class="book-img" width="170" height="170">
+                </td>
+                <td id="rc75">
+                    <img src="./Picture/bookA.png" class="book-img" width="170" height="170">
+                </td>
+            </tr>
+            <tr>
+                <td id="rc81">
+                    <h6 color="blue">A prince Among Frogs by E D Baker
+                        Used Trade Paperback</h6>
+
+                </td>
+                <td id="rc82">
+                    <h6>Mentats of Duneby Brian Herbert, Kevin J Anderson
+                        Used Hardcover</h6>
+
+                </td>
+                <td id="rc83">
+                    <h6>Ender's Game by Orson Scott Card
+                        Used Trade Paperback</h6>
+
+                </td>
+                <td id="rc84">
+                    <h6>#Girlboss
+                        by Sophia Amoruso
+                        Used Hardcover</h6>
+
+                </td>
+                <td id="rc85">
+                    <h6>& After the Fire
+                        by Lauren Belfer
+                        Used Trade Paperback</h6>
+
+                </td>
+            </tr>
+            <tr>
+                <td id="rc91">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc92">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc93">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc94">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+                <td id="rc95">
+                    <button class="cart-bt">Add to Cart</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+
+        <div class="footer" id="footer">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+
+                        <h3> Specials</h3>
+
+                        <ul>
+
+                            <li> <a href="#"> Gift Cards</a> </li>
+
+                            <li> <a href="#"> Books </a> </li>
+
+                            <li> <a href="#"> Street Sales</a> </li>
+
+
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+
+                        <h3> Services </h3>
+
+                        <ul>
+
+                            <li> <a href="#"> Antiques & Collectibles </a> </li>
+
+                            <li> <a href="#"> Architecture</a> </li>
+
+                            <li> <a href="#"> Art</a> </li>
+
+                            <li> <a href="#"> Biography & Autobiography </a> </li>
+
+                            <li> <a href="#"> Business & Economic</a> </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+
+                        <h3> About </h3>
+
+                        <ul>
+
+                            <li> <a href="#"> UranEar </a> </li>
+
+                            <li> <a href="#"> About Us </a> </li>
+
+                            <li> <a href="#"> Terms of Services </a> </li>
+
+                            <li> <a href="#"> Our Team </a> </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+
+                        <h3> Contact </h3>
+
+                        <ul>
+
+                            <li> <a href="#"> Contact Marketing </a> </li>
+
+                            <li> <a href="#"> Contact Sales </a> </li>
+
+                            <li> <a href="#"> Contact HR </a> </li>
+
+                            <li> <a href="#"> Contact Admin </a> </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+
+                        <h3> Subscribe Us </h3>
+
+                        <ul>
+
+                            <li>
+
+                                <div class="input-append subscribe-btn text-center">
+
+                                    <input type="text" class="full text-center" placeholder="Email ">
+
+                                    <button class="btn  btn-success" type="button"> Subscribe <i class="fa fa-save">
+                                        </i> </button>
+
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                        <ul class="social">
+
+                            <li> <a href="#"> <i class=" fa fa-facebook"> </i> </a> </li>
+
+                            <li> <a href="#"> <i class="fa fa-twitter"> </i> </a> </li>
+
+                            <li> <a href="#"> <i class="fa fa-google-plus"> </i> </a> </li>
+
+                            <li> <a href="#"> <i class="fa fa-pinterest"> </i> </a> </li>
+
+                            <li> <a href="#"> <i class="fa fa-youtube"> </i> </a> </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <!--/.row-->
+
+            </div>
+
+            <!--/.container-->
+
+        </div>
+
+        <!--/.footer-->
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p class="pull-left"> Copyright © 2004-2018. All rights reserved. </p>
+
+                <div class="pull-right">
+
+                    <ul class="nav nav-pills payments">
+
+                        <li>We Accept: </li>
+
+                        <li><i class="fa fa-cc-paypal"></i></li>
+
+                        <li><i class="fa fa-cc-mastercard"></i></li>
+
+                        <li><i class="fa fa-cc-amex"></i></li>
+
+                        <li><i class="fa fa-cc-visa"></i></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--/.footer-bottom-->
+
+    </footer>
+
+</body>
+
+</html>
